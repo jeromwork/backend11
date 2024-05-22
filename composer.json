@@ -52,7 +52,7 @@
             "php -r \"copy('.env.prod', '.env');\"",
             "@composer install",
             "@composer update",
-
+            "@composer dump-autoload",
             "@php artisan vendor:publish --provider=\"Nwidart\\Modules\\LaravelModulesServiceProvider\"",
 
             "@php artisan vendor:publish --provider=\"Intervention\\Image\\ImageServiceProvider\"",
@@ -63,13 +63,14 @@
             "@php artisan config:cache",
             "@php artisan storage:link",
             "@php artisan route:clear",
+
             "@php artisan migrate"
         ],
         "install-eastclinic-dev": [
             "php -r \"copy('.env.dev', '.env');\"",
             "@composer install",
             "@composer update",
-
+            "@composer dump-autoload",
 
             "@php artisan vendor:publish --provider=\"Nwidart\\Modules\\LaravelModulesServiceProvider\"",
 
@@ -81,6 +82,7 @@
             "@php artisan config:cache",
             "@php artisan storage:link",
             "@php artisan route:clear",
+
             "@php artisan migrate"
 
 
@@ -89,6 +91,11 @@
     "extra": {
         "laravel": {
             "dont-discover": []
+        },
+        "merge-plugin": {
+            "include": [
+                "Modules/*/composer.json"
+            ]
         }
     },
     "config": {
