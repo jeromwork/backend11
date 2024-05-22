@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Content\Entities;
+namespace Modules\Content\app\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;

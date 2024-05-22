@@ -14,6 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->append(Cors::class); // Register Cors middleware
+        //$middleware->append(['admin' => \App\Http\Middleware\AdminMiddleware::class,]); // Register Admin middleware
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
