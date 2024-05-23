@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Modules\Health\Http\Controllers\HealthController;
+use Modules\Health\Http\Controllers\Control\HealthBindsController;
+use Modules\Health\Http\Controllers\Control\VariationResourceController;
 
 /*
  *--------------------------------------------------------------------------
@@ -14,6 +15,10 @@ use Modules\Health\Http\Controllers\HealthController;
  *
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
-    Route::apiResource('health', HealthController::class)->names('health');
+
+Route::prefix('v1/control/health')->middleware('admin')->group(function() {
+//    Route::get('/', 'PagesController@index');
+
+    Route::resource('binds', HealthBindsController::class);
+    Route::resource('variations', VariationResourceController::class);
 });

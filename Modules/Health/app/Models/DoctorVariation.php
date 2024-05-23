@@ -17,6 +17,6 @@ class DoctorVariation extends Model
 
     protected static function newFactory(): DoctorVariationFactory
     {
-        //return DoctorVariationFactory::new();
+        return \Modules\Health\Database\factories\DoctorVariationFactory::new();
     }
 }
