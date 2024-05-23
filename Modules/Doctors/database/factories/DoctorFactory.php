@@ -3,7 +3,7 @@
 namespace Modules\Doctors\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Modules\Doctors\Entities\Doctor;
+use Modules\Doctors\Models\Doctor;
 
 class DoctorFactory extends Factory
 {

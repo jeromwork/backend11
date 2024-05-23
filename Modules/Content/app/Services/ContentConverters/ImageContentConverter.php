@@ -11,7 +11,7 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 //use Intervention\Image\Image;
 //use Intervention\Image\Facades\Image;
 use Intervention\Image\ImageManagerStatic as Image;
-use Modules\Content\app\Models\Content;
+use Modules\Content\Models\Content;
 use Modules\Content\Services\ContentService;
 use function Symfony\Component\Finder\name;
 use Illuminate\Support\Facades\File;

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Modules\Content\Services\ContentConverters\app\Services;
+namespace Modules\Content\Services\ContentConverters;
 
 
 use Illuminate\Support\Facades\Storage;

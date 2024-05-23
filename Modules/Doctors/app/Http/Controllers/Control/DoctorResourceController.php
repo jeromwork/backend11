@@ -11,10 +11,10 @@ use Modules\Content\Services\ContentConverters\ImageContentConverter;
 use Modules\Content\Services\ContentConverters\VideoKinescopeContentConverter;
 use Modules\Content\Services\ContentConverters\YoutubeContentConverter;
 use Modules\Content\Services\ContentService;
-use Modules\Doctors\Entities\Doctor;
-use Modules\Doctors\Http\Requests\DoctorInfo\CreateRequest;
-use Modules\Doctors\Http\Requests\DoctorInfo\UpdateRequest;
-use Modules\Doctors\Http\Resources\Admin\DoctorResource;
+use Modules\Doctors\Models\Doctor;
+use Modules\Doctors\Http\Requests\Control\DoctorInfo\CreateRequest;
+use Modules\Doctors\Http\Requests\Control\DoctorInfo\UpdateRequest;
+use Modules\Doctors\Transformers\Control\DoctorResource;
 
 class DoctorResourceController extends Controller
 {

@@ -6,13 +6,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Modules\Content\Entities\Content;
+use Modules\Content\Models\Content;
 use Modules\Content\Services\ContentLegacyCacheService;
 use Modules\Doctors\Database\Factories\DoctorFactory;
-use Modules\Doctors\Entities\DoctorDiplom;
-use Modules\Health\Entities\DoctorVariation;
-use Modules\Health\Entities\Variation;
-use Modules\Schedules\Entities\Schedule;
+use Modules\Doctors\Models\DoctorDiplom;
+use Modules\Health\Models\DoctorVariation;
+use Modules\Health\Models\Variation;
+use Modules\Schedules\Models\Schedule;
 
 class Doctor extends Model
 {

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (!Schema::hasTable('admins')) {
+        if (!Schema::hasTable('contents')) {
             Schema::create('contents', function (Blueprint $table) {
                 $table->uuid('id')->primary();
                 $table->char('file')->default('');

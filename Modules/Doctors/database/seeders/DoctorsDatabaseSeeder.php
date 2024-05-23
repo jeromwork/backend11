@@ -23,7 +23,7 @@ class DoctorsDatabaseSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
 
-        Doctor::factory(20)->create();
+        Doctor::factory(100)->create();
         config(['database.default' => 'sqlite']);
     }
 }
