@@ -8,9 +8,9 @@ class AdminMiddleware
 {
     public function handle($request, Closure $next)
     {
-        return $next($request);
-        if (Auth::guard('sanctum')->check()) {
-            $user = Auth::guard('sanctum')->user();
+
+        if (auth('admin')->check()) {
+            $user = auth('admin')->user();
             if ($user && $user instanceof \App\Models\Admin) {
                 return $next($request);
             }

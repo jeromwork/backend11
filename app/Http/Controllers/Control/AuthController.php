@@ -3,43 +3,41 @@
 namespace App\Http\Controllers\Control;
 
 use App\Http\Controllers\Controller;
+use App\Models\Admin;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $credentials = $request->only('email', 'password');
 
         try {
-$fe = Auth::guard('admin');
-
-//            if($admin = $fe->user()){
-            if(Auth::guard('admin')->attempt($credentials) || !$admin = Auth::user()){
-                $admin = Auth::guard('admin')->user();
+            if( $admin = auth('admin')->user() ){
                 return response()->json([
                     'ok' => true,
-                    'api_token' => $admin->createToken('control')->plainTextToken,
+                    'api_token' => $admin->currentAccessToken()->plainTextToken,
                     'token_type' => 'bearer',
                     'isAdmin' => true,
-                    'expires_in' => 24*60*60
                 ]);
-            }
-            else{
-                return response()->json(['error' => 'Неправильный логин или пароль'], 401);
-            }
+            }else{
+                $admin = Admin::where('email', $request->input('email'))->first();
+                if($admin && Hash::check($request->input('password'), $admin->password)
+                ){
 
-
-            if (!$token = Auth::guard('admin')->attempt($credentials)) {
-                return response()->json(['error' => 'Неправильный логин или пароль'], 401);
+                    return response()->json([
+                        'ok' => true,
+                        'api_token' => $admin->createToken('control')->plainTextToken,
+                        'token_type' => 'bearer',
+                        'isAdmin' => true,
+                        'expires_in' => 24*60*60
+                    ]);
+                }else{
+                    return response()->json(['error' => 'Неправильный логин или пароль'], 401);
+                }
             }
-
-            if(!$admin =  Auth::guard('admin')->user()){
-                return response()->json(['error' => 'Неправильный логин или пароль'], 401);
-            }
-            $token = Auth::guard('admin')->claims(['roles' => ['admin']])->attempt($credentials);
 
         } catch (\Exception $e) {
             return response()->json(['error' => 'Could not create token'.$e->getMessage()], 500);

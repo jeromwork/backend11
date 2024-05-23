@@ -98,7 +98,7 @@ return [
         |--------------------------------------------------------------------------
         |
         | app folder name
-        | for example can change it to 'src' or 'App'
+        | for example can change it to 'src' or 'app'
         */
         'app_folder' => 'app/',
 
