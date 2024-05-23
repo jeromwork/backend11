@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Transformers\Control;
+namespace Modules\Doctors\Transformers\Control;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use Modules\Content\Transformers\ContentResource;
-use Modules\Doctors\Http\Resources\Admin\DiplomResource;
+use Modules\Content\Transformers\Control\ContentResource;
 
 class DoctorResource extends JsonResource
 {

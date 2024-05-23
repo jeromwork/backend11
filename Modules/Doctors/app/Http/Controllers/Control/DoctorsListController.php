@@ -4,10 +4,10 @@ namespace Modules\Doctors\Http\Controllers\Control;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ApiListRequest;
-use App\Models\Doctor;
+use Modules\Doctors\Models\Doctor;
 use App\Services\ApiRequestQueryBuilders\ApiListService;
 use App\Services\Response\ResponseService;
-use App\Transformers\Control\DoctorResource;
+use Modules\Doctors\Transformers\Control\DoctorResource;
 
 class DoctorsListController extends Controller
 {

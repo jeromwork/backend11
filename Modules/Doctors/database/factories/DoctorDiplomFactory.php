@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\Doctors\Database\factories;
+namespace Modules\Doctors\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -11,7 +11,7 @@ class DoctorDiplomFactory extends Factory
      *
      * @var string
      */
-    protected $model = \Modules\Doctors\Entities\DoctorDiplom::class;
+    protected $model =Modules\Doctors\Models\DoctorDiplom::class;
 
     /**
      * Define the model's default state.
