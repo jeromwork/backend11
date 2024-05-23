@@ -4,7 +4,7 @@ namespace Modules\Doctors\Http\Controllers\Control;
 
 use App\Http\Requests\Control\Diploms\CreateRequest;
 use App\Http\Requests\Control\Diploms\UpdateRequest;
-use App\Models\DoctorDiplom;
+use Modules\Doctors\Models\DoctorDiplom;
 use App\Services\Response\ResponseService;
 use Illuminate\Contracts\Support\Renderable;
 use Illuminate\Http\Request;
