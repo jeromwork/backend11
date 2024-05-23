@@ -16,13 +16,15 @@ class AuthController extends Controller
         try {
 $fe = Auth::guard('admin');
 
-            if($admin = $fe->user()){
+//            if($admin = $fe->user()){
+            if(Auth::guard('admin')->attempt($credentials) || !$admin = Auth::user()){
+                $admin = Auth::guard('admin')->user();
                 return response()->json([
                     'ok' => true,
                     'api_token' => $admin->createToken('control')->plainTextToken,
                     'token_type' => 'bearer',
                     'isAdmin' => true,
-                    'expires_in' => auth()->factory()->getTTL() * 60
+                    'expires_in' => 24*60*60
                 ]);
             }
             else{

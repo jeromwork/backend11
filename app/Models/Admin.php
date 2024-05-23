@@ -19,5 +19,6 @@ class Admin extends Authenticatable
         'name',
     ];
     protected $guarded = [];
+    protected $guard = 'admin';
 
 }
