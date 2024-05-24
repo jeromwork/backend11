@@ -1,0 +1,11 @@
+{
+    "name": "Slots",
+    "alias": "slots",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Slots\\Providers\\SlotsServiceProvider"
+    ],
+    "files": []
+}

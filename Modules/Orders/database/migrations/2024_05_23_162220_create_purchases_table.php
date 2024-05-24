@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('purchases', function (Blueprint $table) {
-            $table->char('name')->default('');
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('count');
-            $table->char('order_id')->nullable();
-            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
+        if (!Schema::hasTable('purchases')) {
+            Schema::create('purchases', function (Blueprint $table) {
+                $table->char('name')->default('');
+                $table->unsignedInteger('price');
+                $table->unsignedInteger('count');
+                $table->char('order_id')->nullable();
+                $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
 //            $table->char('order_id')->nullable();
-            $table->text('note')->nullable();
-            $table->timestamps();
-        });
+                $table->text('note')->nullable();
+                $table->timestamps();
+            });
+        }
+
     }
 
     /**

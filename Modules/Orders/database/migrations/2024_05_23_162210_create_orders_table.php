@@ -11,21 +11,24 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->uuid('id')->primary();
-            $table->json('contacts')->nullable();
-            $table->unsignedInteger('client_id')->nullable();
-            $table->unsignedInteger('sum')->default(0);
+        if (!Schema::hasTable('orders')) {
+            Schema::create('orders', function (Blueprint $table) {
+                $table->uuid('id')->primary();
+                $table->json('contacts')->nullable();
+                $table->unsignedInteger('client_id')->nullable();
+                $table->unsignedInteger('sum')->default(0);
 //            $table->unsignedInteger('count')->default(0);
-            $table->text('note')->nullable();
-            $table->boolean('is_online')->default(true);
-            $table->char('payment_provider')->default('');
-            $table->text('pay_url')->nullable();
-            $table->char('pay_id')->nullable();
-            $table->char('status')->default('');
-            $table->timestamps();
+                $table->text('note')->nullable();
+                $table->boolean('is_online')->default(true);
+                $table->char('payment_provider')->default('');
+                $table->text('pay_url')->nullable();
+                $table->char('pay_id')->nullable();
+                $table->char('status')->default('');
+                $table->timestamps();
 
-        });
+            });
+        }
+
     }
 
     /**

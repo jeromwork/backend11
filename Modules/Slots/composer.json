@@ -1,0 +1,30 @@
+{
+    "name": "nwidart/slots",
+    "description": "",
+    "authors": [
+        {
+            "name": "Nicolas Widart",
+            "email": "n.widart@gmail.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [],
+            "aliases": {
+
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "Modules\\Slots\\": "app/",
+            "Modules\\Slots\\Database\\Factories\\": "database/factories/",
+            "Modules\\Slots\\Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Modules\\Slots\\Tests\\": "tests/"
+        }
+    }
+}
