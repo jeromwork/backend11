@@ -5,5 +5,6 @@
     "Orders": true,
     "Profile": true,
     "Slots": true,
-    "Schedules": true
+    "Schedules": true,
+    "Reviews": true
 }
