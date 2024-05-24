@@ -3,7 +3,7 @@
 namespace Modules\Slots\Services\SlotsProviders;
 
 use App\Models\User;
-use Modules\Doctors\Entities\Doctor;
+use Modules\Doctors\Models\Doctor;
 
 abstract class  SlotsProviderAbstract
 {

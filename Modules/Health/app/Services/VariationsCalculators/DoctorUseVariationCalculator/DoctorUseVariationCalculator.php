@@ -5,8 +5,8 @@ namespace Modules\Health\Services\VariationsCalculators\DoctorUseVariationCalcul
 
 
 use Illuminate\Support\Collection;
-use Modules\Health\Entities\Doctor;
-use Modules\Health\Entities\Variation;
+use Modules\Health\Models\Doctor;
+use Modules\Health\Models\Variation;
 
 class DoctorUseVariationCalculator
 {

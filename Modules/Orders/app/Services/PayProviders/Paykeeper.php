@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Log;
 use Modules\Orders\DataStructures\CartStructure;
 use Modules\Orders\DataStructures\ClientStructure;
 use Modules\Orders\DataStructures\InvoiceStructure;
-use Modules\Orders\Entities\Order;
+use Modules\Orders\Models\Order;
 use Carbon\Carbon;
-use Modules\Orders\Http\Requests\PayNotificationRequest;
+use Modules\Orders\Http\Requests\Control\PayNotificationRequest;
 
 class Paykeeper implements PayProviderInterface
 {

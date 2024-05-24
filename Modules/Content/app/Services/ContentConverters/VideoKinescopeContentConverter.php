@@ -7,12 +7,10 @@ namespace Modules\Content\Services\ContentConverters;
 use App\DataStructures\Content\CreateReplicaContentStructure;
 use FFMpeg\Format\Video\X264;
 use Illuminate\Support\Facades\Storage;
-use Modules\Content\app\Models\Content;
+use Modules\Content\Models\Content;
 use Modules\Content\Jobs\CreateReplicaJob;
 use Modules\Content\Services\ContentService;
 use Modules\Content\Services\Kinescope;
-use Modules\Reviews\Entities\ReviewContent;
-//use Modules\Reviews\Jobs\CreatePreviewJob;
 use ProtoneMedia\LaravelFFMpeg\Exporters\EncodingException;
 use ProtoneMedia\LaravelFFMpeg\Filters\WatermarkFactory;
 use ProtoneMedia\LaravelFFMpeg\Support\FFMpeg;
@@ -21,7 +19,7 @@ use Illuminate\Support\Facades\Config;
 
 class VideoKinescopeContentConverter extends ContentConverterAbstract
 {
-    public ?ReviewContent $content = null;
+
 
 
     /**

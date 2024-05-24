@@ -6,7 +6,7 @@ use App\Services\Response\ResponseService;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Hash;
 use Carbon\Carbon;
-use Modules\Profile\Entities\SmsVerification;
+use Modules\Profile\Models\SmsVerification;
 use Modules\Profile\Jobs\ClearSmsVerificationJob;
 use Modules\Profile\Services\SmsProviders\SmsProviderFactory;
 use function Symfony\Component\Translation\t;

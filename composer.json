@@ -11,6 +11,7 @@
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.9",
         "nwidart/laravel-modules": "^11",
+        "pbmedia/laravel-ffmpeg": "^8.5",
         "staudenmeir/belongs-to-through": "^2.16",
         "staudenmeir/eloquent-has-many-deep": "^1.20"
     },

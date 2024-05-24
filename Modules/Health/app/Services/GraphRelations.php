@@ -2,12 +2,12 @@
 
 
 namespace Modules\Health\Services;
-//use Modules\Reviews\Entities\DoctorReview;
+//use Modules\Reviews\Models\DoctorReview;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
-use Modules\Doctors\Entities\Doctor;
-use Modules\Health\Entities\Seo;
-use Modules\Health\Entities\Variation;
+use Modules\Doctors\Models\Doctor;
+use Modules\Health\Models\Seo;
+use Modules\Health\Models\Variation;
 
 
 class GraphRelations

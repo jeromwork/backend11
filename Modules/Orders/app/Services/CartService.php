@@ -3,9 +3,9 @@
 namespace Modules\Orders\Services;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
-use Modules\Orders\Entities\Order;
-use Modules\Orders\Entities\Purchase;
-use Modules\Orders\Http\Requests\StoreOrderRequest;
+use Modules\Orders\Models\Order;
+use Modules\Orders\Models\Purchase;
+use Modules\Orders\Http\Requests\Control\StoreOrderRequest;
 use Modules\Orders\DataStructures\CartGoodStructure;
 use Modules\Orders\DataStructures\CartStructure;
 

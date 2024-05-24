@@ -3,7 +3,7 @@
 namespace Modules\Slots\Services;
 
 use Illuminate\Support\Collection;
-use Modules\Doctors\Entities\Doctor;
+use Modules\Doctors\Models\Doctor;
 
 class FreeSlotsService
 {

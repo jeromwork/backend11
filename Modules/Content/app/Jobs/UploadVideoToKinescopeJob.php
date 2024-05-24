@@ -10,7 +10,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use Modules\Content\app\Models\Content;
+use Modules\Content\Models\Content;
 use Modules\Content\Services\ContentConverters\ContentConverterAbstract;
 use Modules\Content\Services\ContentService;
 use Modules\Content\Services\Kinescope;

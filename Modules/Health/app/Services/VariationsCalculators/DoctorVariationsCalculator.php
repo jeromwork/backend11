@@ -9,8 +9,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 use Illuminate\Support\Facades\Log;
-use Modules\Health\Entities\Doctor;
-use Modules\Health\Entities\Variation;
+use Modules\Health\Models\Doctor;
+use Modules\Health\Models\Variation;
 use Modules\Health\Services\GraphRelations;
 use Modules\Health\Services\VariationsCalculators\DoctorUseVariationCalculator\DoctorUseVariationCalculator;
 use Modules\Health\Services\VariationsCalculators\DoctorUseVariationCalculator\UseBySkill;
@@ -181,8 +181,8 @@ class DoctorVariationsCalculator
 
     protected function updateCollectionByDoctorVariationsBinds($collection, $doctorVariationsBinds, int $doctorId = 0){
         $collectionClass = $collection->getQueueableClass();
-        $isDoctorCollection = ($collectionClass === 'Modules\Health\Entities\Doctor');
-        $isVariationCollection = ($collectionClass === 'Modules\Health\Entities\Variation');
+        $isDoctorCollection = ($collectionClass === 'Modules\Health\Models\Doctor');
+        $isVariationCollection = ($collectionClass === 'Modules\Health\Models\Variation');
         foreach ($collection as $item){
             if($isVariationCollection && $doctorId
                 && isset($doctorVariationsBinds[$doctorId])

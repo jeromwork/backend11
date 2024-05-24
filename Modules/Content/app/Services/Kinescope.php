@@ -4,7 +4,7 @@ namespace Modules\Content\Services;
 
 use App\DataStructures\Content\CreateReplicaContentStructure;
 use App\DataStructures\Kinescope\KinescopeReplicaStructure;
-use Modules\Content\app\Models\Content;
+use Modules\Content\Models\Content;
 
 
 
@@ -20,7 +20,7 @@ class Kinescope
         $ch = curl_init();
 
         $headers = array(
-            'Authorization: Bearer ' . config('kinescope.apiToken'),
+            'Authorization: Bewarer ' . config('kinescope.apiToken'),
             'X-Parent-ID: ' . config('kinescope.idProject'),
             'X-Video-Title: ' . $originalContent->id,
             'X-Video-Description: ' . ($originalContent->alt) ?? '',
@@ -47,6 +47,7 @@ class Kinescope
         $response = curl_exec($ch);
         curl_close($ch);
         if ($response === false) {
+            $f = curl_error($ch);
             //todo @telegram
             return null;
         }
