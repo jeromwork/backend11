@@ -14,6 +14,13 @@ use Modules\Slots\Http\Controllers\SlotsController;
  *
 */
 
-Route::middleware(['auth:sanctum'])->prefix('v1')->group(function () {
+Route::middleware(['admin'])->prefix('v1')->group(function () {
     Route::apiResource('slots', SlotsController::class)->names('slots');
+});
+
+
+Route::prefix('v1')->group( function ($router) {
+
+    Route::get('/free-slots', [SlotsController::class, 'getFreeSlots']);
+
 });

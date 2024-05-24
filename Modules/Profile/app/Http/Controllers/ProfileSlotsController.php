@@ -11,7 +11,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Modules\Profile\Transformers\ProfileSlotsResource;
-use Modules\Slots\Model\Slot;
+use Modules\Slots\Models\Slot;
 
 class ProfileSlotsController extends Controller
 {
