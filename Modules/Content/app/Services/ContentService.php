@@ -244,7 +244,7 @@ class ContentService
                     $replicas->each(function ($rep) use ($content) {
                         $rep->update([
                             'published' => $content->published,
-                            'alt' => $content->alt,
+                            'alt' => ($content->alt) ?? '',
                         ]);
                     });
                 }

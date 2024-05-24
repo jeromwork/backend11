@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Contracts\Filesystem\Filesystem;
 //use Intervention\Image\Image;
 //use Intervention\Image\Facades\Image;
-use Intervention\Image\ImageManagerStatic as Image;
+use Intervention\Image\Laravel\Facades\Image;
+//use Intervention\Image\ImageManagerStatic as Image;
 use Modules\Content\Models\Content;
 use Modules\Content\Services\ContentService;
 use function Symfony\Component\Finder\name;
@@ -44,12 +45,12 @@ class ImageContentConverter extends ContentConverterAbstract
             //todo possible doubles unique id, i think so, check it later
             $previewFilename = uniqid().'.'.$extension;
 
-            $preview = Image::make($fileOriginalFullPath);
+            $preview = Image::read($fileOriginalFullPath);
 
             if($this->width && $this->height) {
-                $preview->fit($this->width, $this->height);
+                $preview->resize($this->width, $this->height);
             }
-            $preview ->encode($extension, $this->quality);
+            $preview ->encodeByExtension($extension, $this->quality);
 
             $previewFile = $originalFileFolder.DIRECTORY_SEPARATOR.$previewFilename;
             $previewFileFullPath = $disk->path($previewFile);
@@ -75,7 +76,7 @@ class ImageContentConverter extends ContentConverterAbstract
                     'parent_id' => $originalContent->id,
                     'is_preview_for'=>($this->parentReplicaId) ?? '',
                     'mime' => $contentService->getMime($previewFile),
-                    'alt' => $originalContent->alt,
+                    'alt' => ($originalContent->alt) ?? '',
                 ]
             );
             Content::create($previewFileInfo->toArray());
