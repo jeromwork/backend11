@@ -23,7 +23,7 @@ return new class extends Migration
                 $table->char('mime')->default('');
                 $table->char('targetClass')->default('');
                 $table->char('original_file_name')->default('');
-                $table->char('alt')->nullable(false)->default('');
+                $table->char('alt')->default('');
                 $table->char('file_extension')->default('');
                 $table->unsignedInteger('file_size')->default(0);
                 $table->integer('left_handle_replicas')->default(-1);

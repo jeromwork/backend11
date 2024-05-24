@@ -29,7 +29,7 @@ class AuthController extends Controller
 
                     return response()->json([
                         'ok' => true,
-                        'api_token' => $admin->createToken('control')->plainTextToken,
+                        'jwtToken' => $admin->createToken('control')->plainTextToken,
                         'token_type' => 'bearer',
                         'isAdmin' => true,
                         'expires_in' => 24*60*60

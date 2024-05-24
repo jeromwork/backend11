@@ -10,7 +10,7 @@ use Illuminate\Contracts\Filesystem\Filesystem;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Storage;
-use Modules\Content\app\Models\Content;
+use Modules\Content\Models\Content;
 use Modules\Content\Http\Requests\StoreContentRequest;
 use Modules\Content\Jobs\ClearUnconfirmedContentJob;
 use Modules\Content\Jobs\CreateReplicaJob;

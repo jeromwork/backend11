@@ -61,7 +61,7 @@ Route::prefix('v1')->group(function () {
         Route::post('login', [AdminAuthController::class, 'login']);
 //        Route::post('register', [AdminAuthController::class, 'register']);
         //'jwt.auth'
-        Route::middleware(['auth:sanctum', 'admin'])->group( function () {
+        Route::middleware(['admin'])->group( function () {
             Route::post('logout', [AdminAuthController::class, 'logout']);
             Route::post('refresh', [AdminAuthController::class, 'refresh']);
         });

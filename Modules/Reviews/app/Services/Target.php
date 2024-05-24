@@ -8,7 +8,7 @@ use Modules\Doctors\Models\Doctor;
 class Target
 {
     private const TARGET_MAP = [
-        'doctor' => 'Modules\Doctors\Entities\Doctor',
+        'doctor' => 'Modules\Doctors\Models\Doctor',
     ];
 
     public function getModel(string $type) {
