@@ -4,5 +4,6 @@
     "Health": true,
     "Orders": true,
     "Profile": true,
-    "Slots": true
+    "Slots": true,
+    "Schedules": true
 }
